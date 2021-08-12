@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load materializecss %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+<div class="container" style="margin-top:30px">
+<div class="row">
+    <form class="" method="post">
+        {% csrf_token %}
+
+       {{form.First_name|materializecss:'s12 m6 l6, icon=person' }}
+          {{form.Last_name|materializecss:'s12 m6 l6, icon=person'}}
+          {{form.Age|materializecss:'custom_size=s12 m6 l6, icon=person' }}
+         {{form.Gender|materializecss:'custom_size=s12 m6 l6, icon=wc'}}
+          {{form.Disease|materializecss:'custom_size=s12 m12 l12, icon=edit' }}
+         {{form.Doctor_name|materializecss:'s12 m6 l6, icon=local_hospital' }}
+          {{form.Doctor_Fees|materializecss:'s12 m6 l6, icon=payment'}}
+               {{form.date|materializecss:'s12 m6 l6, icon=today' }}
+        {{form.time|materializecss:'s12 m6 l6, icon=timer'}}
+
+             <button type="submit" class="btn waves-effect waves-light #ff5252 red accent-2" style="margin-top:20px;margin-left:40px;"><i class="large material-icons right">send</i>Submit</button>
+
+    </form>
+
+  </div>
+
+
+</div>
+
+
+
+
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!doctype html>
+{% load static %}
+
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/css/materialize.min.css" integrity="sha256-qj3p6P1fJIV+Ndv7RW1ovZI2UhOuboj9GcODzcNFIN8=" crossorigin="anonymous" />
+
+ <title>Hello, world!</title>
+        <style>
+
+        body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  .carousel-item>img{
+  width:100%;
+  height:100%;
+  }
+
+  .next, .prev{
+  color:white;
+  position:absolute;
+  top:45%;
+  cursor:pointer;
+  }
+  .next{
+  right:0px;
+  }
+    .prev{
+  left:0px;
+  }
+
+
+
+  </style>
+  </head>
+
+
+  <body class="#efebe9 brown lighten-5">
+
+  <header class="black">
+
+  <nav class="nav-wrapper #4dd0e1 cyan lighten-2" style="padding:0px 10px;">
+      <div class="container">
+    <div class="nav-wrapper" >
+        <a href="/" class="brand-logo center" >
+            <span class="flow-text white-text center hoverable" style="padding:0px 6px">Patient Form</span>
+        </a>
+         <a href="/" class="sidenav-trigger" data-target="mobile-nav">
+             <i class="material-icons">menu</i>
+         </a>
+      <ul  class="right hide-on-med-and-down">
+        <li><a href="/list" class="">List</a></li>
+        <li><a href="/create/">Create</a></li>
+        <li><a href="/">Home</a></li>
+      </ul>
+    </div>
+          </div>
+  </nav>
+
+      <ul  class="sidenav" id="mobile-nav">
+          <li><a href="/"><i class="material-icons">home</i>Home</a></li>
+           <div class="divider"></div>
+           <li><a href="/create/"><i class="material-icons">create</i>Create</a></li>
+
+          <div class="divider"></div>
+          <li><a href="/list"><i class="material-icons">list</i>List</a></li>
+<div class="divider"></div>
+
+
+      </ul>
+
+  </header>
+
+<main>
+
+{% block content  %}
+{% endblock %}
+    </main>
+
+  <footer class="page-footer #616161 grey darken-2">
+          <div class="container">
+            <div class="row">
+              <div class="col l12 s12 m12 center">
+                <h5 class="white-text">Contact</h5>
+                <p class="grey-text text-lighten-4">Mukeshgupta01999@gmail.com</p>
+              </div>
+
+            </div>
+          </div>
+          <div class="footer-copyright #424242 grey darken-3">
+            <div class="container center-align">
+            © 2021 Copyright Mukesh Gupta
+
+            </div>
+          </div>
+        </footer>
+
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/js/materialize.min.js" integrity="sha256-SrBfGi+Zp2LhAvy9M1bWOCXztRU9Ztztxmu5BcYPcPE=" crossorigin="anonymous"></script>
+
+
+  <script>
+
+
+
+$(document).ready(function(){
+ $('select').formSelect();
+
+  $('.timepicker').timepicker();
+  $('.datepicker').datepicker({'format': 'yyyy-mm-dd'});
+
+  $('.collapsible').collapsible();
+  $('.sidenav').sidenav();
+   $('.carousel.carousel-slider').carousel({fullWidth:true,indicators: true});
+ setInterval(function() {
+    $('.carousel').carousel('next');
+  }, 2000);
+
+     $('.scrollspy').scrollSpy();
+
+     $('.next').click(function(){
+     $('.carousel').carousel('next');
+     });
+
+      $('.prev').click(function(){
+     $('.carousel').carousel('prev');
+     });
+
+
+  setInterval(function() {
+    $('.demo-carousel-content').carousel('next');
+  }, 2000);
+
+
+});
+</script>
+
+
+
+  </body>
+</html>

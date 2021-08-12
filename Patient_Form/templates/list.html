@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body >
+{% block content %}
+<div class="container">
+
+  <h4 class="center">Patients Lists:</h4>
+
+        <ul class="collapsible" data-collapsible="accordion">
+              {% for patient in patients %}
+          <li>
+            <div class="collapsible-header">
+              <i class="material-icons">person</i>{{patient.First_name|title}}  {{patient.Last_name|title}}
+                -{{patient.date|date:'d-m-Y'}} {{patient.time}}
+            </div>
+            <div class="collapsible-body #fafafa grey lighten-5">
+<div class="row">
+
+        <span class="col s12 m6 l6" style="margin-bottom:10px;"><strong>Disease : </strong>{{patient.Disease|title}}</span>
+                     <a href="{% url 'detail' patient.pk %}" class="btn waves-effect waves-light col s5 m2 l2" style="margin-right:4px">Detail</a>
+        <a href="{% url 'delete' patient.pk %}" class="btn waves-effect waves-light col s5 m2  l2 #ff5252 red accent-2" style="margin-left:4px">Delete</a>
+</div>
+</div>
+
+          </li>
+
+       {% endfor %}
+        </ul>
+
+
+</div>
+
+
+
+{% endblock %}
+</body>
+</html>

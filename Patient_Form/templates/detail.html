@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+<div class="container" style="margin-bottom:30px" >
+
+    <h4 class="center">Patient Detail :</h4>
+        <ul class="collection">
+           <li class="collection-item avatar">
+             <i class="material-icons circle">person</i>
+               <span class="title"><strong>Name :</strong></span>
+             <p>{{patient.First_name|capfirst}} {{patient.Last_name|capfirst}}</p>
+             <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+           </li>
+               <li class="collection-item avatar">
+             <i class="material-icons circle">wc</i>
+               <span class="title"><strong>Gender :</strong></span>
+             <p>{{patient.Gender|capfirst}}</p>
+             <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+           </li>
+               <li class="collection-item avatar">
+             <i class="material-icons circle">person</i>
+               <span class="title"><strong>Age :</strong></span>
+             <p>{{patient.Age}}</p>
+             <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+           </li>
+               <li class="collection-item avatar">
+             <i class="material-icons circle">edit</i>
+               <span class="title"><strong>Disease :</strong></span>
+             <p>{{patient.Disease|title}}</p>
+             <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+           </li>
+               <li class="collection-item avatar">
+             <i class="material-icons circle">local_hospital</i>
+               <span class="title"><strong>Doctor Name :</strong></span>
+             <p>{{patient.Doctor_name|title}}</p>
+             <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+           </li>
+               <li class="collection-item avatar">
+             <i class="material-icons circle">payment</i>
+               <span class="title"><strong>doctor Fees :</strong></span>
+             <p>{{patient.Doctor_Fees}} Rs.</p>
+             <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+           </li>   <li class="collection-item avatar">
+             <i class="material-icons circle">today</i>
+               <span class="title"><strong>Date :</strong></span>
+             <p>{{patient.date}} {{patient.time}}</p>
+             <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+           </li>
+
+         </ul>
+    <a href="{% url 'update' patient.pk %}" class="btn waves-effect waves-light" style="margin-right:10px"><i class="large material-icons left">add</i> Update</a>
+    <a href="{% url 'delete' patient.pk %}" class="btn waves-effect waves-light #ff5252 red accent-2"><i class="large material-icons left">delete</i> delete</a>
+</div>
+{% endblock %}
+</body>
+</html>

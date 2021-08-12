@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+            <style>
+
+
+  </style>
+</head>
+<body class="blue-grey">
+{% block content %}
+
+
+
+
+
+
+
+<div class="full-slider" style="margin-top:40px;margin-bottom:40px">
+ <div class="carousel carousel-slider">
+      <div class="carousel-fixed-item center">
+      <a  href="{% url 'create' %}" class="waves-effect waves-light btn btn-large white black-text hoverable" style="opacity:0.6">start</a>
+    </div>
+
+
+    <a class="carousel-item" href="#one!">
+         <img src="{% static 'img/image1.jpg' %}" class="responsive-img">
+               <div class="carousel-fixed-item center demo-carousel-content" style="margin-bottom:140px">
+     <h2 class="black-text">Health Care </h2>
+      <p class="black-text">Provide global leadership on science and data WHO will monitor and evaluate the latest scientific developments around COVID-19 and beyond, identifying opportunities to harness those advances to improve global health.</p>
+    </div>
+
+
+    </a>
+    <a class="carousel-item" href="#two!">
+        <img src="{% static 'img/images2.jpg' %}" class="responsive-img">
+       <div class="carousel-fixed-item center demo-carousel-content" style="margin-bottom:140px">
+     <h2 class="black-text">Doctors</h2>
+      <p class="black-text">The doctors should have detailed knowledge about the science of medicine and the art of medicine.</p>
+    </div>
+    </a>
+    <a class="carousel-item" href="#three!">
+        <img src="{% static 'img/images5.jpeg' %}" class="responsive-img">
+
+          <div class="carousel-fixed-item center demo-carousel-content" style="margin-bottom:140px">
+     <h2 class="white-text">Healthcare</h2>
+      <p class="white-text">The prevention, treatment, and management of illness and the preservation of mental and physical well-being through the services offered by the medical and allied health professions.</p>
+    </div>
+    </a>
+
+         <a class="carousel-item" href="#four!">
+        <img src="{% static 'img/images6.jpeg' %}" class="responsive-img">
+                  <div class="carousel-fixed-item center demo-carousel-content" style="margin-bottom:140px">
+     <h2 class="black-text">Knowledge</h2>
+      <p class="black-text">Take care of yourself.</p>
+    </div>
+    </a>
+
+         <a class="carousel-item" href="#four!">
+        <img src="{% static 'img/images7.jpeg' %}" class="responsive-img">
+                  <div class="carousel-fixed-item center demo-carousel-content" style="margin-bottom:140px">
+     <h2 class="black-text">Medicine</h2>
+      <p class="black-text">Medicine is the science and practice of caring for a patient and managing the diagnosis, prognosis, prevention, treatment or palliation of their injury or disease.</p>
+    </div>
+    </a>
+
+
+ <div class="white prev black-text" style="opacity:0.3;"><i class="material-icons large">navigate_before</i> </div>
+     <div class="white next black-text" style="opacity:0.3;"><i class="material-icons large">navigate_next</i> </div>
+
+  </div>
+   
+</div>
+
+
+
+
+
+{% endblock %}
+</body>
+</html>
+        
